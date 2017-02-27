@@ -35,8 +35,22 @@ export default class FluxExample extends React.Component {
     return(
       <div>
         <NumberRenderer number={this.state.currentCount} />
-        <div><button type="button" onClick={() => {this.addToCount(1000);}}>Add 1000 to Count</button></div>
-        <div><button type="button" onClick={() => {this.setCount(0);}}>Reset Count</button></div>
+        <div>
+          <button
+              type="button"
+              onClick={() => {this.addToCount(1000);}}
+            >
+            Add 1000 to Count
+          </button>
+        </div>
+        <div>
+          <button
+              type="button"
+              onClick={() => {this.setCount(0);}}
+            >
+            Reset Count
+          </button>
+        </div>
       </div>
     )
   }

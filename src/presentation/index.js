@@ -182,10 +182,10 @@ export default class Presentation extends React.Component {
             </TableRow>
             <TableRow>
               <TableItem>
-                <CodePane lang="jsx" source={require("raw-loader!./code-examples/stateful-component.example")} textSize="10" />
+                <CodePane lang="jsx" source={require("raw-loader!./code-examples/stateful-component.example")} textSize="10" margin="0 5px 0 0" />
               </TableItem>
               <TableItem>
-                <CodePane lang="jsx" source={require("raw-loader!./code-examples/stateless-component.example")} textSize="10" />
+                <CodePane lang="jsx" source={require("raw-loader!./code-examples/stateless-component.example")} textSize="10" margin="0 0 0 5px"/>
               </TableItem>
             </TableRow>
           </Table>
