@@ -15,7 +15,10 @@ import {
   TableRow,
   TableHeaderItem,
   TableItem,
-  CodePane
+  CodePane,
+  List,
+  ListItem,
+  Link
 } from "spectacle";
 
 // Import image preloader util
@@ -60,11 +63,26 @@ export default class Presentation extends React.Component {
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             What the Flux?
           </Heading>
-          <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
+          <Text lineHeight={1.5} margin="10px 0 0" textColor="tertiary" size={1} fit bold>
             Introduction to Reactive Programming on the Web with React.js
           </Text>
+          <Text italic lineHeight={3} textSize={16}>(For real, this presentation is coded in React and is available on Github: <Link href="http://bit.ly/gr-flux" target="_blank">bit.ly/gr-flux</Link>)</Text>
+          <Table lineHeight={2}>
+            <TableRow>
+              <TableHeaderItem>Robby Emmert</TableHeaderItem>
+              <TableHeaderItem>CJ Davis</TableHeaderItem>
+            </TableRow>
+            <TableRow>
+              <TableItem>
+                <Text textColor="#888" textSize={24} italic>@robby4g</Text>
+              </TableItem>
+              <TableItem>
+                <Text textColor="#888" textSize={24} italic>@crevax</Text>
+              </TableItem>
+            </TableRow>
+          </Table>
         </Slide>
-        <Slide transition={["fade"]}  bgColor="secondary" textColor="primary">
+        <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
           <Heading size={2} fit caps textColor="quartenary">
             Flux Definition
           </Heading>
@@ -86,10 +104,25 @@ export default class Presentation extends React.Component {
             <Quote textSize="16">
               ...publish–subscribe is a messaging pattern where senders of messages, called publishers, do not program the messages to be sent directly to specific receivers, called subscribers, but instead characterize published messages into classes without knowledge of which subscribers, if any, there may be. Similarly, subscribers express interest in one or more classes and only receive messages that are of interest, without knowledge of which publishers, if any, there are.
             </Quote>
-            <Cite>
+            <Cite textColor="#fff">
               Wikipedia
             </Cite>
           </BlockQuote>
+        </Slide>
+        <Slide bgColor="tertiary">
+          <Heading size={2} fit lineHeight={1}>
+            Just an Idea.
+          </Heading>
+          <Text>
+            Flux is an architectural idea that can be implemented in any framework/language.
+          </Text>
+          <List>
+            <ListItem>React</ListItem>
+            <ListItem>AngularJS</ListItem>
+            <ListItem>Vanilla</ListItem>
+            <ListItem>On The Server</ListItem>
+            <ListItem>Anywhere...</ListItem>
+          </List>
         </Slide>
         <Slide transition={["fade"]} bgColor="quartenary">
           <Heading size={2} fit caps>
@@ -153,6 +186,37 @@ export default class Presentation extends React.Component {
               </TableItem>
               <TableItem>
                 <CodePane lang="jsx" source={require("raw-loader!./code-examples/stateless-component.example")} textSize="10" />
+              </TableItem>
+            </TableRow>
+          </Table>
+        </Slide>
+        <Slide transition={["fade"]} bgColor="tertiary">
+          <Heading size={2} textColor="quartenary">
+            What Next?
+          </Heading>
+          <Text>
+             Where to learn more about React and Flux.
+          </Text>
+          <Text lineHeight={2}><Link href="http://bit.ly/react-links" target="_blank">bit.ly/react-links</Link></Text>
+          <Table>
+            <TableRow>
+              <TableHeaderItem>React</TableHeaderItem>
+              <TableHeaderItem>Flux</TableHeaderItem>
+            </TableRow>
+            <TableRow>
+              <TableItem>
+                <List>
+                  <ListItem><Link href="https://facebook.github.io/react/" target="_blank">Official Site</Link></ListItem>
+                  <ListItem><Link href="https://facebook.github.io/react/tutorial/tutorial.html" target="_blank">Official Tutorial</Link></ListItem>
+                  <ListItem><Link href="https://github.com/robbyemmert/sample-webpack-build" target="_blank">Starter Kit</Link></ListItem>
+                </List>
+              </TableItem>
+              <TableItem>
+                <List>
+                  <ListItem><Link href="https://facebook.github.io/flux/" target="_blank">Official Site</Link></ListItem>
+                  <ListItem><Link href="https://egghead.io/courses/getting-started-with-redux" target="_blank">Learn Redux</Link></ListItem>
+                  <ListItem><Link href="https://github.com/robbyemmert/react-redux-starter-kit" target="_blank">Starter Kit</Link></ListItem>
+                </List>
               </TableItem>
             </TableRow>
           </Table>
